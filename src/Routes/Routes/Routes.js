@@ -6,46 +6,48 @@ import FAQ from "../../FAQ/FAQ";
 import Home from "../../HomePage/Home/Home";
 import Main from "../../Layouts/Main/Main";
 import Login from "../../RegistrationPage/Login/Login";
-import Register from "../../RegistrationPage/Register.js/Register";
+import Register from "../../Register.js/Register";
 
-export const router =createBrowserRouter([
+export const router = createBrowserRouter([
     {
-        path:'/',
-        element:<Main></Main>,
-        children:([
+        path: '/',
+        element: <Main></Main>,
+        children: ([
+            {
+                path: '/courses',
+                element: <Courses></Courses>
+            },
             {
                 path: '/',
-                element:<Home></Home>
+                element: <Home></Home>
             },
             {
-                path:'/blog',
-                element:<Blog></Blog>
+                path: '/blog',
+                element: <Blog></Blog>
+            },
+        
+            {
+                path: '/login',
+                element: <Login></Login>
             },
             {
-                path:'/courses',
-                element:<Courses></Courses>
+                path: '/register',
+                element: <Register></Register>
             },
             {
-                path:'/login',
-                element:<Login></Login>
+                path: '/faq',
+                element: <FAQ></FAQ>
             },
             {
-                path:'/register',
-                element:<Register></Register>
-            },
-            {
-                path:'/faq',
-                element:<FAQ></FAQ>
-            },
-            {
-                path:'/about',
-                element:<About></About>
+                path: '/about',
+                element: <About></About>
             }
         ])
 
-    }
-    
-    
 
-    
+    }
+
+
+
+
 ])
