@@ -6,7 +6,8 @@ import FAQ from "../../FAQ/FAQ";
 import Home from "../../HomePage/Home/Home";
 import Main from "../../Layouts/Main/Main";
 import Login from "../../RegistrationPage/Login/Login";
-import Register from "../../Register.js/Register";
+import Register from "../../RegistrationPage/Register.js/Register";
+
 
 export const router = createBrowserRouter([
     {
@@ -15,7 +16,8 @@ export const router = createBrowserRouter([
         children: ([
             {
                 path: '/courses',
-                element: <Courses></Courses>
+                element: <Courses></Courses>,
+                loader:()=>fetch('http://localhost:5000/all-courses')
             },
             {
                 path: '/',

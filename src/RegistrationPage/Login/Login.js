@@ -3,6 +3,15 @@ import login from '../../login.webp'
 import { Link } from 'react-router-dom';
 
 const Login = () => {
+
+    const handleSignIn=(event)=>{
+        event.preventDefault();
+        const form=event.target;
+        const email=form.email.value;
+        const password=form.password.value;
+        console.log(email, password)
+    }
+
     return (
         <div className='sm:flex items-center'>
             <div className=' sm:w-1/2'>
@@ -10,15 +19,14 @@ const Login = () => {
                     <div className="hero-content flex-col lg:flex-row-reverse">
                         <div className="text-center">
                             <h1 className="text-5xl font-bold">Login now!</h1>
-                            
                         </div>
                         <div className="card flex-shrink-0 w-full max-w-sm shadow-2xl bg-base-100">
-                            <div className="card-body">
+                            <form onSubmit={handleSignIn} className="card-body">
                                 <div className="form-control">
                                     <label className="label">
                                         <span className="label-text">Email</span>
                                     </label>
-                                    <input type="email" placeholder="email" className="input input-bordered" required />
+                                    <input type="email" placeholder="email" name='email' className="input input-bordered" required />
                                 </div>
                                 <div className="form-control">
                                     <label className="label">
@@ -35,7 +43,7 @@ const Login = () => {
                                     <button className='btn bg-inherit text-indigo-600 mt-2 hover:text-white'>Sign In With Google</button>
                                     <button className='btn bg-inherit text-indigo-600 mt-2 hover:text-white'>Sign In With GitHub</button>
                                 </div>
-                            </div>
+                            </form>
                         </div>
                     </div>
                 </div>

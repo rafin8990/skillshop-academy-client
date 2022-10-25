@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import register from '../login2.png'
+import registerpic from '../../login2.png'
 
 const Register = () => {
     return (
@@ -53,7 +53,7 @@ const Register = () => {
                 </div>
                 <div className=' sm:w-1/2 flex justify-center items-center min-h-screen bg-base-200 '>
                     <div className='shadow-lg'>
-                        <img src={register} alt="" />
+                        <img src={registerpic} alt="" />
                     </div>
                 </div>
             </div>
