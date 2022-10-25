@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 
 const CourseCard = ({ course }) => {
-    const { title, image_url } = course;
+    const { title, image_url, _id } = course;
 
     return (
         <div>
@@ -12,7 +12,7 @@ const CourseCard = ({ course }) => {
                     <h2 className="card-title">{title}</h2>
                     <p></p>
                     <div className="card-actions justify-end">
-                        <Link><button className="btn btn-primary">View Details</button></Link>
+                        <Link to={`/courses/${_id}`}><button className="btn btn-primary">View Details</button></Link>
                     </div>
                 </div>
             </div>
