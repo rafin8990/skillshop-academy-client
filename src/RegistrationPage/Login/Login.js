@@ -23,9 +23,11 @@ const Login = () => {
         signInWithEmail(email, password)
         .then(result=>{
             const user= result.user;
-            setError('');
-            navigate(from ,{replace:true});
             console.log(user)
+            navigate(from ,{replace:true});
+            setError('');
+            form.reset();
+            
         })
         .catch(error=>{
             const errorMassage=error.message;
@@ -49,6 +51,7 @@ const Login = () => {
         gitHubSignIn()
         .then(result=>{
             const user=result.user;
+            setError('')
             console.log(user);
         })
         .catch(error=>{
