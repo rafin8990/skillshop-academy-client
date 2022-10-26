@@ -51,7 +51,7 @@ export const router = createBrowserRouter([
             },
             {
                 path:'/categories/:id',
-                element:<PrivateRoute><CheakOut></CheakOut></PrivateRoute>,
+                element:<CheakOut></CheakOut>,
                 loader: ({params}) => fetch(`http://localhost:5000/categories/${params.id}`)
             },
             {
