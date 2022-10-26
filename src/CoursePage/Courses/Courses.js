@@ -14,10 +14,10 @@ const Courses = () => {
                 </div>
             </div>
 
-            <div className=''>
+            <div className=' container'>
                 <div className='sm:flex mt-5 mb-5'>
                     {/* left side navigation side  */}
-                    <div className='sm:w-1/6  '>
+                    <div className=''>
                         <div className='sm:ml-6'>
                             {
                                 courses.map(course => <h3

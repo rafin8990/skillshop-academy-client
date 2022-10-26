@@ -1,14 +1,18 @@
 import React from 'react';
 import login from '../../login.webp'
-import { Link } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { useContext } from 'react';
 import { AuthContext } from '../../context/AuthContext/AuthProvider';
 import { useState } from 'react';
 
 const Login = () => {
+    const navigate=useNavigate();
 
     const {googleSignIn, gitHubSignIn, signInWithEmail}=useContext(AuthContext);
     const [error, setError]=useState('');
+    const location=useLocation();
+
+    const from=location.state?.from?.pathname || '/'; 
 
     const handleSignIn=(event)=>{
         event.preventDefault();
@@ -19,6 +23,8 @@ const Login = () => {
         signInWithEmail(email, password)
         .then(result=>{
             const user= result.user;
+            setError('');
+            navigate(from ,{replace:true});
             console.log(user)
         })
         .catch(error=>{

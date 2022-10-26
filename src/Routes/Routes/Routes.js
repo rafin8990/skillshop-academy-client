@@ -7,6 +7,7 @@ import Courses from "../../CoursePage/Courses/Courses";
 import FAQ from "../../FAQ/FAQ";
 import Home from "../../HomePage/Home/Home";
 import Main from "../../Layouts/Main/Main";
+import PrivateRoute from "../../PrivateRoute/PrivateRoute/PrivateRoute";
 import Login from "../../RegistrationPage/Login/Login";
 import Register from "../../RegistrationPage/Register.js/Register";
 
@@ -54,7 +55,7 @@ export const router = createBrowserRouter([
             },
             {
                 path:'/categories/:id',
-                element:<CheakOut></CheakOut>,
+                element:<PrivateRoute><CheakOut></CheakOut></PrivateRoute>,
                 loader: ({params}) => fetch(`http://localhost:5000/categories/${params.id}`)
             }
         ])
