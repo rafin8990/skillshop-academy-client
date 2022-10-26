@@ -1,8 +1,12 @@
 import React from 'react';
 import login from '../../login.webp'
 import { Link } from 'react-router-dom';
+import { useContext } from 'react';
+import { AuthContext } from '../../context/AuthContext/AuthProvider';
 
 const Login = () => {
+
+    const {googleSignIn, gitHubSignIn,logOut}=useContext(AuthContext);
 
     const handleSignIn=(event)=>{
         event.preventDefault();
@@ -11,6 +15,26 @@ const Login = () => {
         const password=form.password.value;
         console.log(email, password)
     }
+    const handleGoogleSignIn=()=>{
+        googleSignIn()
+        .then(result=>{
+            const user=result.user;
+            console.log(user);
+        })
+        .catch(error=>{
+            console.error(error);
+        })
+    }
+    const handleGithubSignIn=()=>{
+        gitHubSignIn()
+        .then(result=>{
+            const user=result.user;
+            console.log(user);
+        })
+        .catch(error=>{
+            console.error(error);
+    })
+}
 
     return (
         <div className='sm:flex items-center'>
@@ -40,8 +64,8 @@ const Login = () => {
                                 </div>
                                 <div className="form-control mt-6">
                                     <button className="btn bg-indigo-600 hover:bg-indigo-800 ">Sign In</button>
-                                    <button className='btn bg-inherit text-indigo-600 mt-2 hover:text-white'>Sign In With Google</button>
-                                    <button className='btn bg-inherit text-indigo-600 mt-2 hover:text-white'>Sign In With GitHub</button>
+                                    <button onClick={handleGoogleSignIn} className='btn bg-inherit text-indigo-600 mt-2 hover:text-white'>Sign In With Google</button>
+                                    <button onClick={handleGithubSignIn} className='btn bg-inherit text-indigo-600 mt-2 hover:text-white'>Sign In With GitHub</button>
                                 </div>
                             </form>
                         </div>

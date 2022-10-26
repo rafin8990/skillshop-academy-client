@@ -1,10 +1,26 @@
 import React from 'react';
+import { useContext } from 'react';
 import { useState } from "react";
 import { Link } from 'react-router-dom';
+import { AuthContext } from '../context/AuthContext/AuthProvider';
 import logo from '../logo.png'
+import { FaUser } from "react-icons/fa";
 
 const Header = () => {
     const [navbar, setNavbar] = useState(false);
+    const { user, logOut } = useContext(AuthContext);
+    // console.log(user);
+
+
+    // const handleLogOut = () => {
+    //     logOut()
+    //         .then(() => {
+
+    //         })
+    //         .catch(e => {
+
+    //         })
+    // }
     return (
         <div>
             <nav className="w-full bg-indigo-300 shadow-lg">
@@ -59,7 +75,7 @@ const Header = () => {
                                 }`}
                         >
                             <ul className="items-center justify-center space-y-8 md:flex md:space-x-6 md:space-y-0">
-                              
+
                                 <li className="text-white hover:text-indigo-200">
                                     <Link to='/'>Home</Link>
                                 </li>
@@ -78,37 +94,88 @@ const Header = () => {
                             </ul>
 
                             <div className="mt-3 space-y-2 lg:hidden md:inline-block">
-                                <Link
-                                    className="md:hidden inline-block w-full px-4 py-2 text-center text-white bg-gray-600 rounded-md shadow hover:bg-gray-800"
-                                    to='/login'
-                                >
-                                    Sign in
-                                </Link>
-                                <Link
-                                    className="md:hidden inline-block w-full px-4 py-2 text-center text-gray-800 bg-white rounded-md shadow hover:bg-gray-100"
+                                {
+                                    user?.uid ?
+                                        <div className='flex items-center'>
+                                            <div>
+                                                {
+                                                    user?.photoURL ?
+                                                        <img className=' h-10 rounded-full m-2' src={user?.photoURL} alt="" />
+                                                        :
+                                                        <FaUser></FaUser>
+                                                }
+                                            </div>
+                                            <p className=' text-gray-500'>{user?.displayName}</p>
 
-                                    to='/register'
-                                >
-                                    Sign up
-                                </Link>
-                                <input type="checkbox" className="toggle" checked />
+                                            <button onClick={logOut}
+                                                className="px-4 py-2 m-2 text-gray-800 bg-white rounded-md shadow hover:bg-gray-300"
+                                            >
+                                                Sign Out
+                                            </button>
+
+                                        </div>
+
+                                        :
+                                        <div>
+                                            <Link
+                                                className="md:hidden inline-block w-full px-4 py-2 text-center text-white bg-gray-600 rounded-md shadow hover:bg-gray-800"
+                                                to='/login'
+                                            >
+                                                Sign in
+                                            </Link>
+                                            <Link
+                                                className="md:hidden inline-block w-full px-4 py-2 text-center text-gray-800 bg-white rounded-md shadow hover:bg-gray-100"
+
+                                                to='/register'
+                                            >
+                                                Sign up
+                                            </Link>
+                                        </div>
+                                }
                             </div>
                         </div>
                     </div>
                     <div className="hidden space-x-2 md:inline-block">
-                        <Link
-                            className="px-4 py-2 text-white bg-gray-600 rounded-md shadow hover:bg-gray-800"
-                            to='/login'
-                        >
-                            Sign in
-                        </Link>
-                        <Link
-                            className="px-4 py-2 text-gray-800 bg-white rounded-md shadow hover:bg-gray-300"
-                            to='/register'
-                        >
-                            Sign up
-                        </Link>
-                        <input type="checkbox" className="toggle" checked />
+                        {
+                            user?.uid ?
+                                <div className='flex items-center'>
+                                    <div>
+                                        {
+                                            user?.photoURL ?
+                                                <img className=' h-10 rounded-full m-2' src={user?.photoURL} alt="" />
+                                                :
+                                                <FaUser></FaUser>
+                                        }
+                                    </div>
+                                    <p className=' text-gray-500'>{user?.displayName}</p>
+
+                                    <button onClick={logOut}
+                                        className="px-4 py-2 m-2 text-gray-800 bg-white rounded-md shadow hover:bg-gray-300"
+                                    >
+                                        Sign Out
+                                    </button>
+
+                                </div>
+                                :
+                                <div>
+
+                                    <Link
+                                        className="px-4 py-2 m-2 text-white bg-gray-600 rounded-md shadow hover:bg-gray-800"
+                                        to='/login'
+                                    >
+                                        Sign in
+                                    </Link>
+                                    <Link
+                                        className="px-4 py-2 text-gray-800 bg-white rounded-md shadow hover:bg-gray-300"
+                                        to='/register'
+                                    >
+                                        Sign up
+                                    </Link>
+                                </div>
+
+                        }
+
+
                     </div>
                 </div>
             </nav>
@@ -117,3 +184,4 @@ const Header = () => {
 };
 
 export default Header;
+
