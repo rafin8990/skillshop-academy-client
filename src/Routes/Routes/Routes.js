@@ -48,16 +48,17 @@ export const router = createBrowserRouter([
                 element: <About></About>
             },
             {
+                path:'/categories/:id',
+                element:<PrivateRoute><CheakOut></CheakOut></PrivateRoute>,
+                loader: ({params}) => fetch(`http://localhost:5000/categories/${params.id}`)
+            },
+            {
                 path: '/courses/:id',
                 element: <CourseDetails></CourseDetails>,
                 loader: ({ params }) => fetch(`http://localhost:5000/courses/${params.id}`)
 
-            },
-            {
-                path:'/categories/:id',
-                element:<PrivateRoute><CheakOut></CheakOut></PrivateRoute>,
-                loader: ({params}) => fetch(`http://localhost:5000/categories/${params.id}`)
             }
+           
         ])
 
 

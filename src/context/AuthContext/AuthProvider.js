@@ -1,6 +1,6 @@
 import React from 'react';
 import { createContext } from 'react';
-import { GoogleAuthProvider, GithubAuthProvider, getAuth, signInWithPopup, signOut, onAuthStateChanged, createUserWithEmailAndPassword, signInWithEmailAndPassword, updateProfile } from 'firebase/auth'
+import { GoogleAuthProvider, GithubAuthProvider, getAuth, signInWithPopup, signOut, onAuthStateChanged, createUserWithEmailAndPassword, signInWithEmailAndPassword, updateProfile} from 'firebase/auth'
 import app from '../../firebase/firebase.config';
 import { useState } from 'react';
 import { useEffect } from 'react';
@@ -15,7 +15,7 @@ const auth = getAuth(app);
 const AuthProvider = ({ children }) => {
 
     const [user, setUser] = useState(null);
-    const [loading, setLoading]=useState(true);
+    const [loading, setLoading] = useState(true);
 
     // google sign in methos 
     const googleSignIn = () => {
@@ -35,7 +35,7 @@ const AuthProvider = ({ children }) => {
 
     // sign in with email and password 
 
-    const signInWithEmail=(email,password)=>{
+    const signInWithEmail = (email, password) => {
         setLoading(true);
         return signInWithEmailAndPassword(auth, email, password);
     }
@@ -47,8 +47,9 @@ const AuthProvider = ({ children }) => {
         return signOut(auth);
     };
 
+
     // update profile name and photo 
-    const updateUserProfile=(profile)=>{
+    const updateUserProfile = (profile) => {
         return updateProfile(auth.currentUser, profile);
     }
 
@@ -56,8 +57,11 @@ const AuthProvider = ({ children }) => {
     // onauthstatechange 
     useEffect(() => {
         const unsubscribe = onAuthStateChanged(auth, (currentUser) => {
+
             setUser(currentUser);
-            setLoading(false)
+
+
+            setLoading(false);
         })
         return () => {
             unsubscribe();
@@ -65,7 +69,7 @@ const AuthProvider = ({ children }) => {
     }, [])
 
 
-    const authInfo = {updateUserProfile, user, googleSignIn, gitHubSignIn, logOut, createUserWithEmail,signInWithEmail,loading }
+    const authInfo = { updateUserProfile, user, googleSignIn, gitHubSignIn, logOut, createUserWithEmail, signInWithEmail, loading, setLoading }
     return (
         <AuthContext.Provider value={authInfo}>
             {children}

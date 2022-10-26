@@ -6,7 +6,7 @@ import cover from '../../course-cover.jpg'
 const Courses = () => {
     const courses = useLoaderData()
     return (
-        <div>
+        <div className=' bg-indigo-200'>
             <div>
                 {/* card cover image  */}
                 <div>
@@ -14,14 +14,14 @@ const Courses = () => {
                 </div>
             </div>
 
-            <div className=' container'>
+            <div className=' container '>
                 <div className='sm:flex mt-5 mb-5'>
                     {/* left side navigation side  */}
                     <div className=''>
                         <div className='sm:ml-6'>
                             {
                                 courses.map(course => <h3
-                                    className=' text-indigo-500 hover:text-white hover:bg-indigo-500 border border-indigo-300 mt-5  p-3 rounded-md mb-4 text-xl shadow-md'
+                                    className=' text-black border-indigo-300 bg-white hover:text-white hover:bg-indigo-500 border mt-5  p-3 rounded-md mb-4 text-xl shadow-md'
                                     key={course._id}
 
 
@@ -33,13 +33,15 @@ const Courses = () => {
 
                         {/* course card side  */}
 
-                        <div className='grid sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 gap-5'>
-                            {
-                                courses.map(course => <CourseCard
-                                    key={course._id}
-                                    course={course}
-                                ></CourseCard>)
-                            }
+                        <div className='flex justify-center'>
+                            <div className='grid sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 gap-5 sm:ml-20'>
+                                {
+                                    courses.map(course => <CourseCard
+                                        key={course._id}
+                                        course={course}
+                                    ></CourseCard>)
+                                }
+                            </div>
                         </div>
                     </div>
                 </div>

@@ -1,4 +1,3 @@
-import React from 'react';
 import login from '../../login.webp'
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { useContext } from 'react';
@@ -8,7 +7,7 @@ import { useState } from 'react';
 const Login = () => {
     const navigate=useNavigate();
 
-    const {googleSignIn, gitHubSignIn, signInWithEmail}=useContext(AuthContext);
+    const {googleSignIn, gitHubSignIn, signInWithEmail, setLoading}=useContext(AuthContext);
     const [error, setError]=useState('');
     const location=useLocation();
 
@@ -25,14 +24,16 @@ const Login = () => {
             const user= result.user;
             console.log(user)
             navigate(from ,{replace:true});
-            setError('');
             form.reset();
-            
+            setError('');     
         })
         .catch(error=>{
             const errorMassage=error.message;
                 setError(errorMassage);
                 console.error(error);
+        })
+        .finally(()=>{
+            setLoading(false)
         })
     }
     const handleGoogleSignIn=()=>{
@@ -60,6 +61,7 @@ const Login = () => {
             console.error(error);
     })
 }
+
 
     return (
         <div className='sm:flex items-center'>

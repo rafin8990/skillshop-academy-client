@@ -7,7 +7,6 @@ const CourseDetails = () => {
     // card details load 
     const CourseDetails = useLoaderData();
     const { image, title, details, rating, amount,_id,category_id} = CourseDetails
-    console.log(CourseDetails)
 
     // pdf download 
     const onButtonClick = () => {

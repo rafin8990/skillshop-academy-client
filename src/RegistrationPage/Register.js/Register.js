@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { useContext } from 'react';
-import { Link } from 'react-router-dom';
+import { Link} from 'react-router-dom';
 import { AuthContext } from '../../context/AuthContext/AuthProvider';
 import registerpic from '../../login2.png'
 
@@ -8,9 +8,6 @@ const Register = () => {
     const {createUserWithEmail, updateUserProfile}=useContext(AuthContext);
     const [error, setError]=useState('')
     
-   
-    
-
     const handleSignUp=(event)=>{
         event.preventDefault()
         const form = event.target;
