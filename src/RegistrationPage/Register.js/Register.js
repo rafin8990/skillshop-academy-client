@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { useContext } from 'react';
 import { Link } from 'react-router-dom';
 import { AuthContext } from '../../context/AuthContext/AuthProvider';
@@ -6,6 +6,7 @@ import registerpic from '../../login2.png'
 
 const Register = () => {
     const {createUserWithEmail}=useContext(AuthContext);
+    const [error, setError]=useState('')
 
     const handleSignUp=(event)=>{
         event.preventDefault()
@@ -19,9 +20,12 @@ const Register = () => {
         .then(result=>{
             const user=result.user;
             console.log(user)
-            .catch(error=>{
-                console.error(error);
+            form.reset();
             })
+            .catch(error=>{
+                const errorMassage=error.message;
+                setError(errorMassage)
+                console.error(error);
         })
     }
     return (
@@ -59,6 +63,7 @@ const Register = () => {
                                             <span className="label-text">Password</span>
                                         </label>
                                         <input type="password" name='password' placeholder="Enter password" className="input input-bordered" required />
+                                        <p className=' text-red-600'><small>{error}</small></p>
                                         <p className='flex'>
                                             Already have an account?
                                             <Link to='/login' className=' text-primary'><p>Please login</p></Link>

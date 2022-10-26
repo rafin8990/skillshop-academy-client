@@ -7,7 +7,7 @@ import { useState } from 'react';
 
 const Login = () => {
 
-    const {googleSignIn, gitHubSignIn}=useContext(AuthContext);
+    const {googleSignIn, gitHubSignIn, signInWithEmail}=useContext(AuthContext);
     const [error, setError]=useState('');
 
     const handleSignIn=(event)=>{
@@ -16,6 +16,16 @@ const Login = () => {
         const email=form.email.value;
         const password=form.password.value;
         console.log(email, password)
+        signInWithEmail(email, password)
+        .then(result=>{
+            const user= result.user;
+            console.log(user)
+        })
+        .catch(error=>{
+            const errorMassage=error.message;
+                setError(errorMassage);
+                console.error(error);
+        })
     }
     const handleGoogleSignIn=()=>{
         googleSignIn()
@@ -24,6 +34,8 @@ const Login = () => {
             console.log(user);
         })
         .catch(error=>{
+            const errorMassage=error.message;
+                setError(errorMassage)
             console.error(error);
         })
     }
@@ -34,6 +46,8 @@ const Login = () => {
             console.log(user);
         })
         .catch(error=>{
+            const errorMassage=error.message;
+                setError(errorMassage)
             console.error(error);
     })
 }
@@ -59,6 +73,7 @@ const Login = () => {
                                         <span className="label-text">Password</span>
                                     </label>
                                     <input type="password" name='password' placeholder="password" className="input input-bordered" required/>
+                                    <p className=' text-red-600'><small>{error}</small></p>
                                    <p className='flex'>
                                    New to this site? 
                                     <Link to='/register' className=' text-primary'><p>Please Sign Up first</p></Link>
