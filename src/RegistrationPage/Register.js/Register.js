@@ -1,8 +1,29 @@
 import React from 'react';
+import { useContext } from 'react';
 import { Link } from 'react-router-dom';
+import { AuthContext } from '../../context/AuthContext/AuthProvider';
 import registerpic from '../../login2.png'
 
 const Register = () => {
+    const {createUserWithEmail}=useContext(AuthContext);
+
+    const handleSignUp=(event)=>{
+        event.preventDefault()
+        const form = event.target;
+        const name=form.name.value;
+        const photoUrl=form.photoUrl.value;
+        const email=form.email.value;
+        const password=form.password.value;
+        console.log(name,photoUrl,email, password);
+        createUserWithEmail(email, password)
+        .then(result=>{
+            const user=result.user;
+            console.log(user)
+            .catch(error=>{
+                console.error(error);
+            })
+        })
+    }
     return (
         <div>
             <div className='sm:flex items-center'>
@@ -13,7 +34,7 @@ const Register = () => {
                                 <h1 className="text-5xl font-bold">Register Now!</h1>
 
                             </div>
-                            <div className="card flex-shrink-0 w-full max-w-sm shadow-2xl bg-base-100">
+                            <form onSubmit={handleSignUp} className="card flex-shrink-0 w-full max-w-sm shadow-2xl bg-base-100">
                                 <div className="card-body">
                                     <div className="form-control">
                                         <label className="label">
@@ -31,13 +52,13 @@ const Register = () => {
                                         <label className="label">
                                             <span className="label-text">Email</span>
                                         </label>
-                                        <input type="email" placeholder="enter email" name='email' className="input input-bordered" />
+                                        <input type="email" placeholder="Enter email" name='email' className="input input-bordered"  required/>
                                     </div>
                                     <div className="form-control">
                                         <label className="label">
                                             <span className="label-text">Password</span>
                                         </label>
-                                        <input type="password" name='password' placeholder="enter password" className="input input-bordered" />
+                                        <input type="password" name='password' placeholder="Enter password" className="input input-bordered" required />
                                         <p className='flex'>
                                             Already have an account?
                                             <Link to='/login' className=' text-primary'><p>Please login</p></Link>
@@ -47,7 +68,7 @@ const Register = () => {
                                         <button className="btn bg-indigo-600 hover:bg-indigo-800 ">Sign Up</button>
                                     </div>
                                 </div>
-                            </div>
+                            </form>
                         </div>
                     </div>
                 </div>

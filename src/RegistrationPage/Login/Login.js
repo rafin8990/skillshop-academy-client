@@ -3,10 +3,12 @@ import login from '../../login.webp'
 import { Link } from 'react-router-dom';
 import { useContext } from 'react';
 import { AuthContext } from '../../context/AuthContext/AuthProvider';
+import { useState } from 'react';
 
 const Login = () => {
 
-    const {googleSignIn, gitHubSignIn,logOut}=useContext(AuthContext);
+    const {googleSignIn, gitHubSignIn}=useContext(AuthContext);
+    const [error, setError]=useState('');
 
     const handleSignIn=(event)=>{
         event.preventDefault();
