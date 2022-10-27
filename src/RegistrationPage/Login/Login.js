@@ -13,6 +13,8 @@ const Login = () => {
 
     const from=location.state?.from?.pathname || '/'; 
 
+        // email password sign in 
+
     const handleSignIn=(event)=>{
         event.preventDefault();
         const form=event.target;
@@ -36,10 +38,13 @@ const Login = () => {
             setLoading(false)
         })
     }
+
+    // google sign in 
     const handleGoogleSignIn=()=>{
         googleSignIn()
         .then(result=>{
             const user=result.user;
+            navigate(from ,{replace:true});
             console.log(user);
         })
         .catch(error=>{
@@ -48,10 +53,13 @@ const Login = () => {
             console.error(error);
         })
     }
+
+    // github sign in 
     const handleGithubSignIn=()=>{
         gitHubSignIn()
         .then(result=>{
             const user=result.user;
+            navigate(from ,{replace:true});
             setError('')
             console.log(user);
         })

@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link, useLoaderData } from 'react-router-dom';
 import CourseCard from '../CourseCard/CourseCard';
-import cover from '../../course-cover.jpg'
+
 
 const Courses = () => {
     const courses = useLoaderData()
@@ -9,8 +9,13 @@ const Courses = () => {
         <div className=' bg-indigo-200'>
             <div>
                 {/* card cover image  */}
-                <div>
-                    <img className=' w-screen' src={cover} alt="" />
+                <div className="hero sm:h-[600px]" style={{ backgroundImage: `url("https://easebuzz.in/blog/wp-content/uploads/2021/12/blog-032-Buildbuzz-1024x683.jpg")` }}>
+                    <div className="hero-overlay bg-opacity-60"></div>
+                    <div className="hero-content text-center text-neutral-content">
+                        <div className="">
+                            <h1 className="mb-5 text-2xl sm:text-6xl font-bold">Here Is Our All Courses</h1>
+                        </div>
+                    </div>
                 </div>
             </div>
 

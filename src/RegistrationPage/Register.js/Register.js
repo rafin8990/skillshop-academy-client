@@ -8,6 +8,7 @@ const Register = () => {
     const {createUserWithEmail, updateUserProfile}=useContext(AuthContext);
     const [error, setError]=useState('')
     
+    // email password sign up 
     const handleSignUp=(event)=>{
         event.preventDefault()
         const form = event.target;

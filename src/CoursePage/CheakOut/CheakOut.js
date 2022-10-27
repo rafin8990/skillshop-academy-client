@@ -9,6 +9,19 @@ const CheakOut = () => {
     const { title } = cheakOutData;
     return (
         <div>
+            <div>
+                {/* cover side  */}
+                <div className="hero sm:h-[600px]" style={{ backgroundImage: `url("https://easebuzz.in/blog/wp-content/uploads/2021/12/blog-cover-0.jpg")` }}>
+                    <div className="hero-overlay bg-opacity-60"></div>
+                    <div className="hero-content text-center text-neutral-content">
+                        <div className="">
+                            <h1 className="mb-5 text-2xl sm:text-6xl font-bold">Welcome For Purchess The Course</h1>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+                {/* shipping btn side  */}
             <div className='flex justify-center items-center m-5'>
                 <input type="checkbox" checked className="checkbox" />
                 <p className='text-success ml-2'>Shipping</p>
@@ -20,7 +33,7 @@ const CheakOut = () => {
                 <p className='text-success ml-2'>Confirmation</p>
                 <progress className="progress progress-success w-10" value="100" max="100"></progress>
             </div>
-
+            {/* shipping form side  */}
             <div className='mt-5 flex justify-center'>
                 <div className='border border-indigo-300 mb-4 shadow-2xl rounded-xl '>
                     <div className=' p-6' >

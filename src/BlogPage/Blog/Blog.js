@@ -4,6 +4,8 @@ import pic from '../../sideImage.png'
 const Blog = () => {
     return (
         <div className=' bg-indigo-300'>
+
+            {/* question cover side  */}
             <div className='sm:flex border border-orange-500 shadow-xl rounded-xl'>
                 <div className=' m-8'>
                     <h1 className='text-4xl sm:text-6xl font-bold text-orange-500'>Do You Want To Learn About FireBase & Node Js?</h1>
@@ -13,6 +15,8 @@ const Blog = () => {
                     <img src={pic} alt="" />
                 </div>
             </div>
+
+            {/* ques and ans side  */}
 
             <div className='mt-10 p-4 grid sm:grid-cols-2 md:grid-cols-3'>
                 <div className=' border border-orange-500 rounded-lg ml-3 mr-3 mt-3 shadow-sm'>
