@@ -22,7 +22,7 @@ export const router = createBrowserRouter([
             {
                 path: '/courses',
                 element: <Courses></Courses>,
-                loader: () => fetch('http://localhost:5000/all-courses')
+                loader: () => fetch('https://skill-shop-academy-server.vercel.app/all-courses')
             },
             {
                 path: '/',
@@ -52,12 +52,12 @@ export const router = createBrowserRouter([
             {
                 path:'/categories/:id',
                 element:<PrivateRoute><CheakOut></CheakOut></PrivateRoute>,
-                loader: ({params}) => fetch(`http://localhost:5000/categories/${params.id}`)
+                loader: ({params}) => fetch(`https://skill-shop-academy-server.vercel.app/categories/${params.id}`)
             },
             {
                 path: '/courses/:id',
                 element: <CourseDetails></CourseDetails>,
-                loader: ({ params }) => fetch(`http://localhost:5000/courses/${params.id}`)
+                loader: ({ params }) => fetch(`https://skill-shop-academy-server.vercel.app/courses/${params.id}`)
 
             }
            

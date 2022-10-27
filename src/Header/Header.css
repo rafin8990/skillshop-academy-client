@@ -6,3 +6,18 @@
     background-color: #fff;
     color: #333;
   }
+
+  #user-info p { 
+    display: none;
+  }
+  #user-info #profile-pic:hover #img{
+    display: none;
+  }
+
+  #user-info #profile-pic:hover #fa-user{
+    display: none;
+  }
+  #user-info:hover p{
+    display: inline;
+  }
+
