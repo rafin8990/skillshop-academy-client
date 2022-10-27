@@ -28,7 +28,7 @@ const FAQ = () => {
                     <div className='mt-10 p-4 grid sm:grid-cols-2 md:grid-cols-3'>
                         <div className=' border border-gray-500 rounded-lg ml-3 mr-3 mt-3 shadow-sm'>
                             <div className='border border-gray-500 p-2'>
-                                <h1 className='text-amber-500 text-4xl'>What a Programming Language?</h1>
+                                <h1 className='text-amber-500 text-4xl'>What is a Programming Language?</h1>
                             </div>
                             <p className='text-amber-500 text-xl p-2'>Answer: </p>
                             <p className='text-amber-500 p-2'>
@@ -37,7 +37,7 @@ const FAQ = () => {
                         </div>
                         <div className=' border border-gray-500 rounded-lg ml-3 mr-3 mt-3 shadow-sm'>
                             <div className='border border-gray-500 p-2'>
-                                <h1 className='text-amber-500 text-4xl'>What a Java Language?</h1>
+                                <h1 className='text-amber-500 text-4xl'>What is Java Language?</h1>
                             </div>
                             <p className='text-amber-500 text-xl p-2'>Answer: </p>
                             <p className='text-amber-500 p-2'>
@@ -46,7 +46,7 @@ const FAQ = () => {
                         </div>
                         <div className=' border border-gray-500 rounded-lg ml-3 mr-3 mt-3 shadow-sm'>
                             <div className='border border-gray-500 p-2'>
-                                <h1 className='text-amber-500 text-4xl'>What a Javascript?</h1>
+                                <h1 className='text-amber-500 text-4xl'>What is  Javascript?</h1>
                             </div>
                             <p className='text-amber-500 text-xl p-2'>Answer: </p>
                             <p className='text-amber-500 p-2'>
@@ -55,7 +55,7 @@ const FAQ = () => {
                         </div>
                         <div className=' border border-gray-500 rounded-lg ml-3 mr-3 mt-3 shadow-sm'>
                             <div className='border border-gray-500 p-2'>
-                                <h1 className='text-amber-500 text-4xl'>What a Linux?</h1>
+                                <h1 className='text-amber-500 text-4xl'>What is  Linux?</h1>
                             </div>
                             <p className='text-amber-500 text-xl p-2'>Answer: </p>
                             <p className='text-amber-500 p-2'>
@@ -64,7 +64,7 @@ const FAQ = () => {
                         </div>
                         <div className=' border border-gray-500 rounded-lg ml-3 mr-3 mt-3 shadow-sm'>
                             <div className='border border-gray-500 p-2'>
-                                <h1 className='text-amber-500 text-4xl'>What a Programming Python?</h1>
+                                <h1 className='text-amber-500 text-4xl'>What is Programming Python?</h1>
                             </div>
                             <p className='text-amber-500 text-xl p-2'>Answer: </p>
                             <p className='text-amber-500 p-2'>
@@ -73,7 +73,7 @@ const FAQ = () => {
                         </div>
                         <div className=' border border-gray-500 rounded-lg ml-3 mr-3 mt-3 shadow-sm'>
                             <div className='border border-gray-500 p-2'>
-                                <h1 className='text-amber-500 text-4xl'>What a C programming?</h1>
+                                <h1 className='text-amber-500 text-4xl'>What is C programming?</h1>
                             </div>
                             <p className='text-amber-500 text-xl p-2'>Answer: </p>
                             <p className='text-amber-500 p-2'>
@@ -82,7 +82,7 @@ const FAQ = () => {
                         </div>
                         <div className=' border border-gray-500 rounded-lg ml-3 mr-3 mt-3 shadow-sm'>
                             <div className='border border-gray-500 p-2'>
-                                <h1 className='text-amber-500 text-4xl'>What a Angular Js?</h1>
+                                <h1 className='text-amber-500 text-4xl'>What is Angular Js?</h1>
                             </div>
                             <p className='text-amber-500 text-xl p-2'>Answer: </p>
                             <p className='text-amber-500 p-2'>
@@ -91,7 +91,7 @@ const FAQ = () => {
                         </div>
                         <div className=' border border-gray-500 rounded-lg ml-3 mr-3 mt-3 shadow-sm'>
                             <div className='border border-gray-500 p-2'>
-                                <h1 className='text-amber-500 text-4xl'>What a Firebase?</h1>
+                                <h1 className='text-amber-500 text-4xl'>What is Firebase?</h1>
                             </div>
                             <p className='text-amber-500 text-xl p-2'>Answer: </p>
                             <p className='text-amber-500 p-2'>
@@ -100,7 +100,7 @@ const FAQ = () => {
                         </div>
                         <div className=' border border-gray-500 rounded-lg ml-3 mr-3 mt-3 shadow-sm'>
                             <div className='border border-gray-500 p-2'>
-                                <h1 className='text-amber-500 text-4xl'>What a Node Js?</h1>
+                                <h1 className='text-amber-500 text-4xl'>What is Node Js?</h1>
                             </div>
                             <p className='text-amber-500 text-xl p-2'>Answer: </p>
                             <p className='text-amber-500 p-2'>
