@@ -24,7 +24,7 @@ const CheakOut = () => {
                 {/* shipping btn side  */}
             <div className='flex justify-center items-center m-5'>
                 <input type="checkbox" checked className="checkbox" />
-                <p className='text-success ml-2'>Shipping</p>
+                <p className='text-success ml-2'>Parchess</p>
                 <progress className="progress progress-success w-10" value="100" max="100"></progress>
                 <input type="checkbox" checked className="checkbox" />
                 <p className='text-success ml-2'>Payment</p>

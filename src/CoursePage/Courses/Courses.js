@@ -6,7 +6,7 @@ import CourseCard from '../CourseCard/CourseCard';
 const Courses = () => {
     const courses = useLoaderData()
     return (
-        <div className=' bg-indigo-200'>
+        <div>
             <div>
                 {/* card cover image  */}
                 <div className="hero sm:h-[600px]" style={{ backgroundImage: `url("https://easebuzz.in/blog/wp-content/uploads/2021/12/blog-032-Buildbuzz-1024x683.jpg")` }}>

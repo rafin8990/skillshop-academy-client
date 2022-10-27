@@ -24,7 +24,9 @@ const FAQ = () => {
             {/* question side  */}
 
             <div>
-                
+                <div>
+                    <h1 className='text-2xl sm:text-4xl '> Question: </h1>
+                </div>
             </div>
         </div>
     );
