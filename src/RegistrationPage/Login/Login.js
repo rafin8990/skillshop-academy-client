@@ -74,7 +74,7 @@ const Login = () => {
     return (
         <div className='sm:flex items-center'>
             <div className=' sm:w-1/2'>
-                <div className="hero min-h-screen bg-base-200">
+                <div className="hero min-h-screen ">
                     <div className="hero-content flex-col lg:flex-row-reverse">
                         <div className="text-center">
                             <h1 className="text-5xl font-bold">Login now!</h1>
@@ -108,7 +108,7 @@ const Login = () => {
                     </div>
                 </div>
             </div>
-            <div className=' sm:w-1/2 flex justify-center items-center min-h-screen bg-base-200 '>
+            <div className=' sm:w-1/2 flex justify-center items-center min-h-screen  '>
                 <div className='shadow-lg'>
                     <img src={login} alt="" />
                 </div>

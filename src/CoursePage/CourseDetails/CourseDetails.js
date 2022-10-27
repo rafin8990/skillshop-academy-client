@@ -6,7 +6,7 @@ import { FaDownload } from "react-icons/fa";
 
 const CourseDetails = () => {
 
-    // card details load 
+    // download pdf 
     const CourseDetails = useLoaderData();
     const { image, title, details, rating, amount,category_id } = CourseDetails
 
