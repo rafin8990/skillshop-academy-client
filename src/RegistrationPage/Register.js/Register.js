@@ -77,7 +77,7 @@ const Register = () => {
                                         </label>
                                         <input type="password" name='password' placeholder="Enter password" className="input input-bordered" required />
                                         <p className=' text-red-600'><small>{error}</small></p>
-                                        <p className='flex'>
+                                        <p className='flex text-black'>
                                             Already have an account?
                                             <Link to='/login' className=' text-primary'><p>Please login</p></Link>
                                         </p>

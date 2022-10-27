@@ -93,7 +93,7 @@ const Login = () => {
                                     </label>
                                     <input type="password" name='password' placeholder="password" className="input input-bordered" required/>
                                     <p className=' text-red-600'><small>{error}</small></p>
-                                   <p className='flex'>
+                                   <p className='flex text-black'>
                                    New to this site? 
                                     <Link to='/register' className=' text-primary'><p>Please Sign Up first</p></Link>
                                    </p>
